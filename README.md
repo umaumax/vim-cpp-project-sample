@@ -33,11 +33,12 @@ rc -J .
 
 ### gtags
 [jsfaint/gen\_tags\.vim: Async plugin for vim and neovim to ease the use of ctags/gtags]( https://github.com/jsfaint/gen_tags.vim )
-`:GenGTAGS`
-`K`
-`<C-o>`: go back
 
-FYI
+* `:GenGTAGS`
+* `K`
+* `<C-o>`: go back
+
+#### FYI
 ```
 nmap <silent> K :<C-u>exe("Gtags ".expand('<cword>'))<CR>
 nmap <silent> R :<C-u>exe("Gtags -r ".expand('<cword>'))<CR>
