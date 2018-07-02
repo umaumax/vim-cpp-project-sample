@@ -10,6 +10,7 @@ vimのcppをプロジェクトように扱うサンプル
 * [direnv/direnv: Unclutter your \.profile]( https://github.com/direnv/direnv )
 * rtags
 * gtags
+	* 'jsfaint/gen_tags.vim' needs `ctags` to generate tags
 * clang-format
 
 ## how to compile
