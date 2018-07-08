@@ -19,10 +19,13 @@ endfunction
 " 	autocmd Filetype cpp :call SymbolicLink('.clang-format')
 " augroup END
 
-let s:include_dir=$VIM_PROJECT_ROOT.'/include'
-let g:deoplete#sources#clang#flags += ['-I'.s:include_dir]
+let include_dirs=[$VIM_PROJECT_ROOT.'include']
+let include_dirs_opts=map(include_dirs, {k,v -> '-I'.v})
+let include_dirs_opt=join(include_dirs_opts, ' ')
 
-let s:options='-std=c++11 -Wall -I'.s:include_dir
+let g:deoplete#sources#clang#flags += include_dirs_opts
+
+let s:options='-std=c++11 -Wall '.include_dirs_opt
 let g:ale_cpp_clang_options = s:options
 let g:ale_cpp_gcc_options = s:options
 
