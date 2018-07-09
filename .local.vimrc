@@ -28,6 +28,7 @@ let g:deoplete#sources#clang#flags += include_dirs_opts
 let s:options='-std=c++11 -Wall '.include_dirs_opt
 let g:ale_cpp_clang_options = s:options
 let g:ale_cpp_gcc_options = s:options
+let g:ale_cpp_cpplint_options = '--linelength=160 --filter=-readability/todo,-legal/copyright,-whitespace/line_length,-build/header_guard'
 
 " ctags setting
 if has('path_extra') && filereadable($VIM_PROJECT_ROOT.'/.tags')
