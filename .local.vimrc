@@ -48,5 +48,17 @@ augroup END
 " disalbe my auto lcd command
 let g:auto_lcd_basedir=0
 
+" NOTE: format flag settings
+augroup auto_format_flag_on
+	autocmd!
+	autocmd BufWinEnter,TabEnter *.{c,cpp,h,hpp} let g:auto_format_flag=1
+	autocmd BufWinEnter,TabEnter *.cmake let g:auto_format_flag=1
+	autocmd BufWinEnter,TabEnter CMakeLists.txt let g:auto_format_flag=1
+augroup END
+
 " 仮に，すべてプロジェクトルートで処理を行うとすると`.clang-format`のシンボリックリンクは不要となる
 lcd $VIM_PROJECT_ROOT
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" command! Make call system("(./build/.make.sh |& webcat) &")
