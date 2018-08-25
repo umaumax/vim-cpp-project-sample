@@ -20,7 +20,7 @@ endfunction
 " augroup END
 
 let include_dirs=[$VIM_PROJECT_ROOT.'include']
-let include_dirs_opts=map(include_dirs, {k,v -> '-I'.v})
+let include_dirs_opts=map([]+include_dirs, {k,v -> '-I'.v})
 let include_dirs_opt=join(include_dirs_opts, ' ')
 
 let g:deoplete#sources#clang#flags += include_dirs_opts
