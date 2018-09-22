@@ -30,14 +30,23 @@ rdm
 rc -J .
 ```
 
-`<Leader>rj` at vim
+#### vim
+* `<Leader>rj`: jump
+* `<C-o>`: go prev window
+* `<C-i>`: go next window
 
 ### gtags
 [jsfaint/gen\_tags\.vim: Async plugin for vim and neovim to ease the use of ctags/gtags]( https://github.com/jsfaint/gen_tags.vim )
 
-* `:GenGTAGS`
-* `K`
-* `<C-o>`: go back
+#### vim
+* `:GenGTAGS`: gen tags
+* `K`: jump
+* `<C-o>`: go prev window
+* `<C-i>`: go next window
+* `:cn`: go to the next entry
+* `:cp`: go to the previous entry
+* `:cc{N}`: gi to the {N}th entry
+* `:cl`: list all entries
 
 #### FYI
 ```
