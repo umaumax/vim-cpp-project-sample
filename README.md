@@ -32,8 +32,38 @@ rc -J .
 
 #### vim
 * `<Leader>rj`: jump
+* `<Leader>rp`: 関数の先頭へ移動
+* `<Leader>rj`: 定義元へ移動(`rS`:h split,`rV`: v split,`rT`: new tab)
+* `<Leader>rb`: Jump to previous location
 * `<C-o>`: go prev window
 * `<C-i>`: go next window
+
+```
+   <Leader>rd   * :call rtags#Diagnostics()<CR>
+   <Leader>rc   * :call rtags#FindSubClasses()<CR>
+   <Leader>rC   * :call rtags#FindSuperClasses()<CR>
+   <Leader>rb   * :call rtags#JumpBack()<CR>
+   <Leader>rv   * :call rtags#FindVirtuals()<CR>
+   <Leader>rw   * :call rtags#RenameSymbolUnderCursor()<CR>
+   <Leader>rl   * :call rtags#ProjectList()<CR>
+   <Leader>rr   * :call rtags#ReindexFile()<CR>
+   <Leader>rs   * :call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
+   <Leader>rn   * :call rtags#FindRefsByName(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
+   <Leader>rF   * :call rtags#FindRefsCallTree()<CR>
+   <Leader>rf   * :call rtags#FindRefs()<CR>
+   <Leader>rp   * :call rtags#JumpToParent()<CR>
+   <Leader>rT   * :call rtags#JumpTo(g:NEW_TAB)<CR>
+   <Leader>rV   * :call rtags#JumpTo(g:V_SPLIT)<CR>
+   <Leader>rS   * :call rtags#JumpTo(g:H_SPLIT)<CR>
+   <Leader>rJ   * :call rtags#JumpTo(g:SAME_WINDOW, { '--declaration-only' : '' })<CR>
+   <Leader>rj   * :call rtags#JumpTo(g:SAME_WINDOW)<CR>
+   <Leader>ri   * :call rtags#SymbolInfo()<CR>
+```
+
+#### original command
+```
+:HelpRtag
+```
 
 ### gtags
 [jsfaint/gen\_tags\.vim: Async plugin for vim and neovim to ease the use of ctags/gtags]( https://github.com/jsfaint/gen_tags.vim )
