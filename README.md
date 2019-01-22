@@ -4,7 +4,7 @@ vimのcppをプロジェクトように扱うサンプル
 
 * rtags,gtagsの自動生成
 * cmake
-* clang-format
+* ~~clang-format~~ (もともと，対象ファイルからparent directoryへ遡る)
 
 ## required
 * [direnv/direnv: Unclutter your \.profile]( https://github.com/direnv/direnv )

@@ -14,11 +14,6 @@ function! SymbolicLink(file)
 	endif
 endfunction
 
-" augroup local_vimrc_cpp_file_event
-" 	autocmd!
-" 	autocmd Filetype cpp :call SymbolicLink('.clang-format')
-" augroup END
-
 let include_dirs=[$VIM_PROJECT_ROOT.'include']
 let include_dirs_opts=map([]+include_dirs, {k,v -> '-I'.v})
 let include_dirs_opt=join(include_dirs_opts, ' ')
@@ -56,7 +51,6 @@ augroup auto_format_flag_on
 	autocmd BufWinEnter,TabEnter CMakeLists.txt let g:auto_format_flag=1
 augroup END
 
-" 仮に，すべてプロジェクトルートで処理を行うとすると`.clang-format`のシンボリックリンクは不要となる
 lcd $VIM_PROJECT_ROOT
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
