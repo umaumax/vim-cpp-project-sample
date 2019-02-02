@@ -2,18 +2,6 @@ if $VIM_PROJECT_ROOT == ''
 	finish
 endif
 
-let s:wd=expand('%:p:h')
-
-function! SymbolicLink(file)
-	let orig_path=$VIM_PROJECT_ROOT.'/'.a:file
-	let sym_path=s:wd.'/'.a:file
-	if filereadable(orig_path) && !filereadable(sym_path)
-		let cmd='ln -sf '.orig_path.' '.sym_path
-		echom cmd
-		call system(cmd)
-	endif
-endfunction
-
 let include_dirs=[$VIM_PROJECT_ROOT.'include']
 let include_dirs_opts=map([]+include_dirs, {k,v -> '-I'.v})
 let include_dirs_opt=join(include_dirs_opts, ' ')
@@ -35,14 +23,6 @@ if executable('rdm')
 	call system('pgrep rdm || rdm --daemon')
 endif
 
-augroup local_vimrc_auto_cmd
-	autocmd!
-	" 	" for jsfaint/gen_tags.vim (lcdしたくない場合)
-	" 	autocmd VimEnter * let $GTAGSROOT = $VIM_PROJECT_ROOT
-augroup END
-" disalbe my auto lcd command
-let g:auto_lcd_basedir=0
-
 " NOTE: format flag settings
 augroup auto_format_flag_on
 	autocmd!
@@ -52,7 +32,3 @@ augroup auto_format_flag_on
 augroup END
 
 lcd $VIM_PROJECT_ROOT
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" command! Make call system("(./build/.make.sh |& webcat) &")
